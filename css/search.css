@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+  
+  .container {
+    margin: 0 auto;
+    padding: 2.5em;
+    width: 50%;
+    text-align: center; }
+    .container h1 {
+      margin-bottom: 1em; }
+    .container hr {
+      margin: 10px 0; }
+    .container .edit_input {
+      float: left;
+      margin-right: 10px; }
+    .container #row_input {
+      width: 40px; }
+    .container .user-table {
+      width: 100%;
+      text-align: center;
+      margin: .5em auto; }
+      .container .user-table thead {
+        background: #000;
+        color: #fff; }
+      .container .user-table td {
+        border: 1px solid #000; }
+  
+  .gray {
+    background-color: #777;
+  }
+  
+  table, td {
+    border: 1px solid black;
+  }
+  
+  table {
+    text-align: center;
+  }
+  
+  td {
+    margin: 5px;
+    padding: 5px;
+  }
+
+  .dodavanje-row{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+
+  .row-small{
+    width: 50%;
+  }
+
+  .row-mid{
+    width: 75%;
+  }
+  
+  .dodavanje-row-button{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    align-items: center;
+    width: 100%;
+  }
+
+  .dodavanje-button{
+    width: 200px
+  }
+  
+  .button{
+    width: 200px;
+  }
+
+  .top-buttons{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .align-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .full-width{
+    width: 100%;
+  }

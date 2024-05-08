@@ -1,0 +1,79 @@
+<html>
+<head>
+	<title>Hoteli Client</title>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/search.css"/>
+	<script type="text/javascript" src="js/skripta.js"></script>
+</head>
+<body onload="loadPage()">
+	<div class="container">
+        <div class="top-buttons" id="topButtons" style="display:none">
+            <h2>Korisnik nije prijavljen na sistem</h2>
+            <button type="button" id="btnLogin" onclick="showLogin()" class="btn btn-lg btn-primary dodavanje-button">Prijava</button>
+            <button type="button" id="btnRegister" onclick="showRegistration()" class="btn btn-lg btn-success dodavanje-button">Registracija</button> 
+        </div>
+       
+        <div id="logout" style="display:none" class="mt-1">
+            <br />
+            <p id="info"></p>
+            <button class="btn btn-danger" onclick="logout()">Odjava</button>
+        </div>
+
+        <br>
+        <br>
+
+        <div id="searchFormDiv" style="display:none">
+            <form id="searchForm" class="align-center">
+                <h3 style="text-align: center;">Pretraga po kapacitetu</h3>
+                <div class="dodavanje-row row-small"><label for="minSearchCapacity">Najmanje:</label><input type="number" id="minSearchCapacity" /></div>
+                <div class="dodavanje-row row-small"><label for="maxSearchCapacity">Najvise:</label><input type="number" id="maxSearchCapacity" /></div>
+                <div class="dodavanje-row-button"><input type="button" value="Trazi" class="btn btn-primary dodavanje-button" onclick="searchHoteliByCapacity()" /></div>
+            </form>
+        </div>
+
+        <div id="loginFormDiv" style="display:none">
+            <h3>Prijava korisnika</h3>
+            <form class="align-center" method="post" action="post/" id="loginForm" onsubmit="return loginUser()">
+                <div class="dodavanje-row row-small"><label>Username: </label><input type="text" id="usernameLogin"></div>
+                <div class="dodavanje-row row-small"><label>Password: </label><input type="password" id="passwordLogin"></div>
+                <br />
+                <div class="dodavanje-row-button"><button class="btn btn-primary dodavanje-button">Prijavi se</button></div>
+                <div class="dodavanje-row-button"><input type="reset" value="Odustajanje" class="btn btn-warning dodavanje-button" onclick="loadPage()" /></div>
+            </form>
+        </div>
+    
+        <div id="registerFormDiv" style="display:none">
+            <h3>Registracija korisnika</h3>
+            <form class="align-center" method="post" action="post/" id="registerForm" onsubmit="return registerUser()">
+                <div class="dodavanje-row row-small"><label>Email: </label><input type="email" id="emailRegister"></div>
+                <div class="dodavanje-row row-small"><label>Username: </label><input type="text" id="usernameRegister"></div>
+                <div class="dodavanje-row row-small"><label>Password: </label><input type="password" id="passwordRegister"></div>
+                <div class="dodavanje-row row-small"><label>Confirm password: </label><input type="password" id="confirmPasswordRegister"></div>
+                <br />
+                <div class="dodavanje-row-button"><button class="btn btn-primary dodavanje-button">Registruj se</button></div>
+                <div class="dodavanje-row-button"><input type="reset" value="Odustajanje" class="btn btn-warning dodavanje-button" onclick="loadPage()" /></div>
+            </form>
+            <link />
+        </div>
+
+		<div id="data">
+		</div>
+
+
+        <div id="formDiv" style="display:none">
+			<form  class="align-center" method="post" action="post/" id="hotelForm" onsubmit="return submitHotelForm()">
+                <h3 style="text-align: center;">Dodavanje novog Hotela</h3>
+                <div class="dodavanje-row row-mid"><label>Lanac: </label> <select class="form-control full-width" id="lanacHotelaNaziv"></select></div>
+                <div class="dodavanje-row row-mid"><label>Naziv: </label> <input class="form-control full-width" id="naziv" type="text" /></div>
+				<div class="dodavanje-row row-mid"><label>Godina otvaranja: </label> <input class="form-control full-width" id="godinaOtvaranja" type="number" /></div>
+				<div class="dodavanje-row row-mid"><label>Broj soba: </label> <input class="form-control full-width" id="brojSoba" type="number" /></div>
+				<div class="dodavanje-row row-mid"><label>Broj zaposlenih: </label> <input class="form-control full-width" id="brojZaposlenih" type="number"/></div>
+				<div class="dodavanje-row-button"><input type="submit" value="Dodavanje" class="btn btn-success dodavanje-button" /> </div>
+				<div class="dodavanje-row-button"><input type="reset" value="Odustajanje" class="btn btn-warning dodavanje-button" onclick="cancelHotelForm()" /></div>
+			</form>
+		</div>
+
+	</div>
+</body>
+</html>
